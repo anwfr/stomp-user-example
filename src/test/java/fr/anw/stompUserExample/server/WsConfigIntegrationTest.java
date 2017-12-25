@@ -108,21 +108,4 @@ public class WsConfigIntegrationTest {
         Assert.assertEquals("Someone just registered saying: yo!", queue2.poll());
     }
 
-
-/*
-    ExecutorService executor = Executors.newSingleThreadExecutor();
-
-    @MessageMapping("/start")
-    public void start(SimpMessageHeaderAccessor accessor) throws Exception {
-        String applicantId=accessor.getSessionId();
-        executor.submit(() -> {
-            //... slow job
-            jobEnd(applicantId);
-        });
-    }
-
-    public void jobEnd(String sessionId){
-        messagingTemplate.convertAndSend("/queue/jobend"); //how to send only to that session?
-    }*/
-
 }
