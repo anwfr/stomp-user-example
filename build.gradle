@@ -1,0 +1,29 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.9.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group 'fr.anw'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-websocket")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile 'org.apache.commons:commons-text:1.2'
+}
